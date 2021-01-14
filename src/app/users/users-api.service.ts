@@ -7,7 +7,6 @@ import {User} from './user.model';
 
 import { catchError, map, tap } from 'rxjs/operators';
 import { LocalStorageService } from '../localStorage.service';
-import {TokenInterceptorService} from '../TokenInterceptor.service';
 
 @Injectable()
 export class UsersApiService {
@@ -17,7 +16,7 @@ export class UsersApiService {
   public head;
   
 
-  constructor(private http: HttpClient, private localStorageService: LocalStorageService, private tokenInterceptorService: TokenInterceptorService) {
+  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
 
   //this.head = new HttpHeaders({ 'Content-Type': 'application/json', 'responseType': 'text' });
   }
