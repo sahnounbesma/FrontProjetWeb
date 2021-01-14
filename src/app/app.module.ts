@@ -40,7 +40,7 @@ import { IonicStorageModule } from '@ionic/storage';
     StorageServiceModule,
     IonicStorageModule.forRoot(),
   ],
-  providers: [UsersApiService, BiensApiService, LocalStorageService,TokenInterceptorService],
+  providers: [UsersApiService, BiensApiService, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
