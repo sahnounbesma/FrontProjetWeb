@@ -6,7 +6,7 @@ import {API_URL} from '../env';
 import {User} from './user.model';
 
 import { catchError, map, tap } from 'rxjs/operators';
-import { LocalStorageService } from '../localStorage.service';
+import { LocalStorageService } from '../LocalStorage.service';
 
 @Injectable()
 export class UsersApiService {

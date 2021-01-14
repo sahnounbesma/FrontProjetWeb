@@ -17,10 +17,9 @@ import { ExamplesModule } from './examples/examples.module';
 import {HttpClientModule} from '@angular/common/http';
 import {UsersApiService} from './users/users-api.service';
 import {BiensApiService} from './biens/biens-api.service';
-import {LocalStorageService} from './localStorage.service';
+import {LocalStorageService} from './LocalStorage.service';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { IonicStorageModule } from '@ionic/storage';
-import {TokenInterceptorService} from './TokenInterceptor.service';
 
 
 @NgModule({

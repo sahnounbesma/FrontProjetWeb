@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';  
 import {API_URL} from '../env';
 import {Bien} from './bien.model';
-import { LocalStorageService } from '../localStorage.service';
+import { LocalStorageService } from '../LocalStorage.service';
 
 @Injectable()
 export class BiensApiService {
