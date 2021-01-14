@@ -8,14 +8,17 @@ const app = express();
 
 // Serve only the static files form the dist directory
 //app.use(express.static(__dirname + '/dist/projetweb'));
-app.use(express.static(__dirname + '/'));
-console.log(__dirname)
+app.use(express.static('./dist'));
+
 
 app.get('/*', function(req,res) {
-    
-res.sendFile(path.join(__dirname+'/src/app/components/components.component.html'));
+//res.sendFile(path.join(__dirname+'/src/app/components/components.component.html'));
+
+res.sendFile(path.join(__dirname,'/dist/index.html'));
 
 });
+
+//'C:\Users\sahno\Desktop\projetWebFront.\dist\index.html'
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
