@@ -61,9 +61,6 @@ export class UsersApiService {
     var t = pro['storage'];
     var j = t['header'];
     var hh = j; //.substring(0, j.length - 1);
-    //console.log('baynaaaaaaa', hh);
-    //var hh = bes.replace(/"/g, "'");
-    //var bzf = hh.substring(1, j.length - 1);
     var ham = JSON.parse(hh);
     console.log('baynaaaaaaa', ham);
     var he = new HttpHeaders(ham);
