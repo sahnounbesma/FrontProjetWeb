@@ -7,11 +7,14 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/projetweb'));
+//app.use(express.static(__dirname + '/dist/projetweb'));
+app.use(express.static(__dirname + '/'));
+console.log(__dirname)
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/dist/projetweb/index.html'));
+res.sendFile(path.join(__dirname+'/src/app/components/components.component.html'));
+
 });
 
 // Start the app by listening on the default Heroku port
