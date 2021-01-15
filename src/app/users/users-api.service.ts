@@ -12,13 +12,12 @@ import { LocalStorageService } from '../LocalStorage.service';
 export class UsersApiService {
   public k; 
   public h;
-  public kraht;
+  public temp;
   public head;
   
 
   constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
 
-  //this.head = new HttpHeaders({ 'Content-Type': 'application/json', 'responseType': 'text' });
   }
 
   httpOptions = {
@@ -90,6 +89,7 @@ export class UsersApiService {
     return this.http.post<User>(url, user, this.httpOptions).pipe();
   }
 
+
     /** DELETE: delete a user  */
   public deleteUser(id: string): Observable<User> {
     const idUser = id;
@@ -128,41 +128,25 @@ export class UsersApiService {
     user.password = password; 
     const token = this.http.post<User>(url, user, this.httpOptions).pipe();
     const f = token.subscribe( value => { this.k = value;  
-    this.kraht = this.localStorageService.storeOnLocalStorage(this.k);
-    } );  // changer here also   const j
+    this.temp = this.localStorageService.storeOnLocalStorage(this.k);
+    } ); 
     var pro = this.localStorageService['storage'];
     var t = pro['storage'];
     var j = t['local_token'];
-    var bes = (j as unknown as string).substring(1, (j as unknown as string).length - 1);   // changed here
-    var hh = bes.replace(/{"token":"/g, "\"Bearer ");
+    var change = (j as unknown as string).substring(1, (j as unknown as string).length - 1);   // changed here
+    var hh = change.replace(/{"token":"/g, "\"Bearer ");
     hh = hh.substring(0, hh.length - 1);
     var ham = JSON.parse(hh);
     var he = new HttpHeaders(ham);
-    console.log('he----------->',he);
     this.head = he;
     var v1 = this.localStorageService['storage'];
     console.log(v1);
     var v2 = v1['storage'];
     var v3 = v2['header'];
-    console.log('ha howa', v3);
-    console.log('hama khaytii', ham);
     var nchallah = this.localStorageService.storeHeader(ham);
-    console.log('ya rebi la3ziz', this.localStorageService['storage']); 
     return this.http.post<User>(url, user, this.httpOptions).pipe();
 
   }
 
 
-
-
 }
-
-
-
-
-
-
-
-
-
-

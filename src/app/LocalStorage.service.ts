@@ -30,11 +30,9 @@ export class LocalStorageService {
               'Content-Type': 'application/json', 
               'Authorization': tokengen 
           });
-          // insert updated array to local storage
+
           this.storage.set(this.STORAGE_KEY, currentToken);
-          //this.storage.set('header' , 'hamouda');
-          //this.storage.set('token' , 'token');
-          //console.log(this.storage.get(this.STORAGE_KEY) || 'LocaL storage is empty');
+
           return this.storage.get(this.STORAGE_KEY);
      }
 
@@ -44,7 +42,7 @@ export class LocalStorageService {
           const currentToken = this.storage.get(this.STORAGE_KEY) || [];
           // insert updated array to local storage
           this.storage.set('header' , header);
-          //console.log('what', this.storage.get('header'));
+          
           return this.storage.get(this.STORAGE_KEY);
      }
 }

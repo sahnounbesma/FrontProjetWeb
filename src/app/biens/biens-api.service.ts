@@ -76,7 +76,6 @@ export class BiensApiService {
     var j = t['header'];
     var hh = j; 
     var ham = JSON.parse(hh);
-    console.log('baynaaaaaaa', ham);
     var he = new HttpHeaders(ham);
     console.log('the header normal', he);
     var opts = { headers: he };
@@ -98,7 +97,6 @@ export class BiensApiService {
     var j = t['header'];
     var hh = j; 
     var ham = JSON.parse(hh);
-    console.log('baynaaaaaaa', ham);
     var he = new HttpHeaders(ham);
     console.log('the header normal', he);
     var opts = { headers: he };
@@ -130,7 +128,6 @@ export class BiensApiService {
     var j = t['header'];
     var hh = j; 
     var ham = JSON.parse(hh);
-    console.log('baynaaaaaaa', ham);
     var he = new HttpHeaders(ham);
     console.log('the header normal', he);
     var opts = { headers: he };
